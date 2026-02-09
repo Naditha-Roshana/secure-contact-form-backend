@@ -11,9 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
 // 2. Database connection
 $host = "localhost";
-$dbname = "your_database_name";
-$username = "your_db_user";
-$password = "your_db_password";
+$dbname = "contact_messages";
+$username = "root";
+$password = "Nadu@06&13";
 
 try {
     $pdo = new PDO(
