@@ -12,8 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 // 2. Database connection
 $host = "localhost";
 $dbname = "contact_messages";
-$username = "root";
-$password = "Nadu@06&13";
+$username = "****";
+$password = "******";
 
 try {
     $pdo = new PDO(
@@ -47,7 +47,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 // 5. Insert into database (Prepared Statement)
-$sql = "INSERT INTO contact_messages (name, email, message)
+$sql = "INSERT INTO contact (name, email, message)
         VALUES (:name, :email, :message)";
 
 $stmt = $pdo->prepare($sql);
