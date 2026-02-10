@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION["admin"])) {
+    header("Location: index.html");
+    exit;
+}
+
 $host = "localhost";
 $dbname = "contact_messages";
 $username = "root";

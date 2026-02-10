@@ -218,7 +218,9 @@
     const status = document.getElementById("loginStatus");
 
     if (user === "admin" && pass === "admin123") {
-      window.location.href = "admin.php";
+      fetch("set_admin.php").then(() => {
+        window.location.href = "admin.php";
+      });
     } else {
       status.textContent = "Invalid credentials";
       status.style.color = "red";
