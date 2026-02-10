@@ -19,6 +19,62 @@
       color: #e5e7eb;
     }
 
+    /* Admin Icon */
+#adminIcon {
+  position: fixed;
+  top: 16px;
+  right: 18px;
+  font-size: 20px;
+  cursor: pointer;
+  background: #020617;
+  border: 1px solid #334155;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-box {
+  background: #020617;
+  padding: 24px;
+  width: 300px;
+  border-radius: 12px;
+  border: 1px solid #1e293b;
+  text-align: center;
+}
+
+.modal-box input {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+.modal-box button {
+  width: 100%;
+  padding: 10px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#loginStatus {
+  margin-top: 10px;
+  font-size: 13px;
+}
+
     .card {
       background: #020617;
       border: 1px solid #1e293b;
@@ -86,6 +142,20 @@
 </head>
 <body>
 
+  <!-- Admin Icon -->
+<div id="adminIcon" title="Admin Login">⚙️</div>
+
+<!-- Admin Login Modal -->
+<div id="loginModal" class="modal">
+  <div class="modal-box">
+    <h3>Admin Login</h3>
+    <input type="text" id="adminUser" placeholder="Username">
+    <input type="password" id="adminPass" placeholder="Password">
+    <button onclick="adminLogin()">Login</button>
+    <p id="loginStatus"></p>
+  </div>
+</div>
+
   <div class="card">
     <h2>Contact Form</h2>
 
@@ -132,6 +202,28 @@
         status.classList.add("error");
       }
     });
+
+// Admin Login Modal Logic
+  const adminIcon = document.getElementById("adminIcon");
+  const modal = document.getElementById("loginModal");
+
+  adminIcon.onclick = () => modal.style.display = "flex";
+  modal.onclick = (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  };
+
+  function adminLogin() {
+    const user = document.getElementById("adminUser").value;
+    const pass = document.getElementById("adminPass").value;
+    const status = document.getElementById("loginStatus");
+
+    if (user === "admin" && pass === "admin123") {
+      window.location.href = "admin.php";
+    } else {
+      status.textContent = "Invalid credentials";
+      status.style.color = "red";
+    }
+  }
   </script>
 
 </body>
