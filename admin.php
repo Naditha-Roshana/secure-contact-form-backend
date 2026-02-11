@@ -7,8 +7,8 @@ if (!isset($_SESSION["admin"])) {
 
 $host = "localhost";
 $dbname = "contact_messages";
-$username = "***";
-$password = "***";
+$username = "root";
+$password = "Nadu@06&13";
 
 try {
     $pdo = new PDO (
