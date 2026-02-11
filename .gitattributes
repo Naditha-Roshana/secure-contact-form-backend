@@ -1,0 +1,5 @@
+# Ignore frontend HTML in language statistics
+*.html linguist-detectable=false
+
+# Ensure PHP is detected normally
+*.php linguist-detectable=true
