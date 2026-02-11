@@ -18,3 +18,20 @@ Confirmation message shown after successful form submission.
 Private admin panel to view all received contact messages in real time.
 
 ![Admin Panel](screenshots/admin-panel.png)
+
+---
+
+🔐 Security Implementation
+
+The application implements the following security measures:
+
+    💠 Server-side form validation
+
+    💠 PDO prepared statements to prevent SQL injection
+
+    💠 Session-based access control for the admin panel
+
+    💠 Restricted direct URL access to admin routes
+
+Note: This project uses demo credentials for development purposes.
+In production, password hashing and database-stored user authentication are recommended.
