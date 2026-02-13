@@ -35,9 +35,6 @@ This project focuses on backend security, database handling, and session-based a
 
 ---
 
-```bash
-git clone https://github.com/your-username/secure-contact-form-backend.git
-
 
 ## 📸 Screenshots
 
@@ -76,3 +73,6 @@ The application implements the following security measures:
 
 Note: This project uses demo credentials for development purposes.
 In production, password hashing and database-stored user authentication are recommended.
+
+```bash
+git clone https://github.com/your-username/secure-contact-form-backend.git
