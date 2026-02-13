@@ -37,9 +37,28 @@ $MESSAGE = $STMT->fetchAll(PDO::FETCH_ASSOC);
       padding: 40px;
     }
 
-    h1 {
-      margin-bottom: 20px;
-    }
+    .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logout-btn {
+  text-decoration: none;
+  background: #ef4444;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
 
     table {
       width: 100%;
@@ -66,7 +85,11 @@ $MESSAGE = $STMT->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
 
-<h1>📩 Contact Messages</h1>
+<div class="top-bar">
+  <h1>📩 Contact Messages</h1>
+  <a href="logout.php" class="logout-btn" onclick="return confirm('Are you sure you want to logout?')">Logout</a>
+</div>
+
 
 <table>
   <tr>
